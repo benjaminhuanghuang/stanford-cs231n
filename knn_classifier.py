@@ -1,7 +1,6 @@
 '''
-    Nearest Neighbor Classifer
-    Train O(1), Predict O(N)
-    This is bad: we want fast prediction; slow for training is ok
+    K-Nearest Neighbor Classifer
+    http://vision.stanford.edu/teaching/cs231n-demos/knn/
 '''
 
 import numpy as np
@@ -46,7 +45,7 @@ class NearestNeighbor:
             
             voted = self.voteNdighbors(k_neighbors)
             if voted > 0:
-                Ypred[i] = self.ytr[dict[voted]]
+                Ypred[i] = self.ytr[voted]
             else:
                 Ypred[i] = -1
 
